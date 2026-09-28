@@ -30,6 +30,13 @@ def check_inbox() -> str:
     """
 
 @tool
+def send_email(to: str, subject: str, body: str) -> str:
+    """Send a response Email"""
+
+    return f"Email Sent to {to} with subject {subject} body {body}"
+
+
+@tool
 def authenticate(email: str, password: str, runtime: ToolRuntime) -> Command:
     """Authenticate the User with given email and password"""
     if email == runtime.context.email_address and password == runtime.context.password:
